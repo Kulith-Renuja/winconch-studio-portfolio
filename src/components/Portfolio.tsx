@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Portfolio: React.FC = () => {
   const projects = [
@@ -131,9 +132,12 @@ const Portfolio: React.FC = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="border border-purple-500 text-purple-400 px-8 py-4 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300 transform hover:scale-105">
-            View All Projects
-          </button>
+          <Link
+            to="/projects"
+            className="inline-block bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+          >
+            VIEW ALL PROJECTS
+          </Link>
         </div>
       </div>
     </section>

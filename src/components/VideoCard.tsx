@@ -1,23 +1,23 @@
 import React from 'react';
-import { Play, Clock, Eye } from 'lucide-react';
+import { Play, Clock } from 'lucide-react';
 
 interface VideoCardProps {
   title: string;
-  thumbnail: string;
   duration: string;
-  views: string;
+  description: string;
   videoId: string;
   onClick: (videoId: string, title: string) => void;
 }
 
 const VideoCard: React.FC<VideoCardProps> = ({ 
   title, 
-  thumbnail, 
   duration, 
-  views, 
+  description,
   videoId, 
   onClick 
 }) => {
+  const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
   return (
     <div 
       className="group cursor-pointer"
@@ -30,7 +30,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
-        
+
         {/* Play Button */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -48,16 +48,8 @@ const VideoCard: React.FC<VideoCardProps> = ({
         <h3 className="text-white font-semibold text-lg group-hover:text-purple-400 transition-colors duration-300 line-clamp-2">
           {title}
         </h3>
-        <div className="flex items-center space-x-4 text-gray-400 text-sm">
-          <div className="flex items-center space-x-1">
-            <Eye size={14} />
-            <span>{views}</span>
-          </div>
-          <div className="flex items-center space-x-1">
-            <Clock size={14} />
-            <span>{duration}</span>
-          </div>
-        </div>
+        <p className="text-sm text-gray-400 line-clamp-2">{description}</p>
+        
       </div>
     </div>
   );

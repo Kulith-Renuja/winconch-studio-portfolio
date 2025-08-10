@@ -60,7 +60,7 @@ const Portfolio: React.FC = () => {
             <div className="text-center text-gray-400 col-span-full">No featured videos available.</div>
           ) : (
             videos.map((video) => {
-              const thumbnail = video.thumbnail || `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`;
+              const thumbnail = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
               return (
                 <div
                   key={video._id}

@@ -27,7 +27,7 @@ const Hero = () => {
         <div className="absolute bottom-1/3 left-1/4 w-24 h-1 bg-gradient-to-l from-purple-400 to-transparent opacity-40 animate-pulse"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <div className="text-purple-400 font-medium text-lg mb-4 tracking-wider">
@@ -50,7 +50,7 @@ const Hero = () => {
             </button>
             <Link
             to="/projects" >
-             <button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 ml-4">
+             <button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 ml-4 mt-4">
               View Our Work
             </button>
             </Link>

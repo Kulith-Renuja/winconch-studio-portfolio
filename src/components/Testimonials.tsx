@@ -4,21 +4,21 @@ import { Star } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'MARCUS',
-      role: 'Co Founder',
-      text: 'Perfect Communication And Exceptional Skills. This Guy Is King.',
-      rating: 5
-    },
-    {
-      name: 'PETER',
-      role: 'Manager',
-      text: 'Did A Great Job. Understood All The Requirements.',
-      rating: 5
-    },
-    {
-      name: 'JANE',
+      name: 'Pavithra Gomis',
       role: 'CEO',
-      text: 'Jimmy Was Wonderful To Work With. Will Definitely Hire Him Again.',
+      text: 'Working with WinConch Studio was a seamless and inspiring experience. Their creativity and professionalism exceeded our expectations.',
+      rating: 5
+    },
+    {
+      name: 'Uvini Amaya',
+      role: 'Manager',
+      text: 'They delivered exactly what we needed, on time and with outstanding quality. Truly impressive work.',
+      rating: 5
+    },
+    {
+      name: 'Viraj',
+      role: 'Co Founder',
+      text: 'Exceptional communication, top-tier skills, and an eye for detail. Highly recommended for any video production needs.',
       rating: 5
     }
   ];

@@ -2,10 +2,10 @@ import React from 'react';
 
 const About = () => {
   const services = [
-    'Cash Cow Editing',
-    'Reels Editing', 
-    'Logo Animation',
-    'Podcast Edit'
+    '🎯 Brand & Commercial Video Editing',
+    '🎯 Reels & Social Media Content', 
+    '🎯 Logo Animation & Motion Graphics',
+    '🎯 Podcast Video Production'
   ];
 
   return (
@@ -13,13 +13,11 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-            ABOUT ME
+            ABOUT US
           </h2>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-gray-300 leading-relaxed mb-8">
-              Welcome To The Cinematic Realm Of Jimmy, Where Creativity Meets Technology To Craft Visually Stunning Narratives. With
-              A Passion For Storytelling And A Keen Eye For Detail, I Embark On A Journey To Transform Ordinary Footage Into
-              Extraordinary Visual Experiences.
+              Welcome to WinConch Studio, where creativity meets precision to craft visually stunning stories. Our passion for cinematic storytelling and attention to detail transforms ordinary footage into captivating visual experiences that inspire, engage, and connect.
             </p>
           </div>
         </div>
@@ -28,7 +26,6 @@ const About = () => {
           {services.map((service, index) => (
             <div key={index} className="text-center group">
               <div className="flex items-center justify-center mb-4">
-                <div className="w-3 h-3 bg-purple-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
               </div>
               <h3 className="text-white font-semibold text-lg group-hover:text-purple-400 transition-colors duration-300">
                 {service}

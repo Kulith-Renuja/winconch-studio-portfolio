@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import VideoCard from '../components/VideoCard';
 import VideoPlayer from '../components/VideoPlayer';
+import { videosAPI } from '../services/api';
 
 const Projects = () => {
-  const [selectedVideo, setSelectedVideo] = useState<{ videoId: string; title: string } | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<{videoId: string, title: string} | null>(null);
   const [activeCategory, setActiveCategory] = useState('all');
+  const [videos, setVideos] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const categories = [
     { id: 'all', name: 'All Projects' },
@@ -18,60 +22,25 @@ const Projects = () => {
     { id: 'commercial', name: 'Commercial Ads' }
   ];
 
-  const videos = [
-    {
-      id: 'dQw4w9WgXcQ',
-      title: 'Tech Company Brand Story',
-      duration: '2:45',
-      description: 'A compelling brand story showcasing the tech company’s vision and mission.',
-      category: 'corporate'
-    },
-    {
-      id: 'z33KlzU5K48',
-      title: 'Financial Services Overview',
-      duration: '3:20',
-      description: 'An overview of innovative financial solutions tailored for modern customers.',
-      category: 'corporate'
-    },
-    {
-      id: 'dQw4w9WgXcQ',
-      title: 'Indie Rock Music Video',
-      duration: '3:45',
-      description: 'A creative and dynamic music video featuring an indie rock band’s latest single.',
-      category: 'music'
-    },
-    {
-      id: 'dQw4w9WgXcQ',
-      title: 'Urban Wildlife Documentary',
-      duration: '12:30',
-      description: 'Exploring the hidden urban wildlife thriving in metropolitan areas.',
-      category: 'documentary'
-    },
-    {
-      id: 'dQw4w9WgXcQ',
-      title: 'Smartphone Launch Campaign',
-      duration: '1:30',
-      description: 'A sleek campaign introducing the latest smartphone model to the market.',
-      category: 'product'
-    },
-    {
-      id: 'dQw4w9WgXcQ',
-      title: 'Instagram Reel Series',
-      duration: '0:30',
-      description: 'Short, engaging reels optimized for Instagram audience engagement.',
-      category: 'social'
-    },
-    {
-      id: 'dQw4w9WgXcQ',
-      title: 'Restaurant Commercial',
-      duration: '0:30',
-      description: 'A commercial showcasing the ambience and signature dishes of a local restaurant.',
-      category: 'commercial'
-    }
-  ];
+  useEffect(() => {
+    fetchVideos();
+  }, []);
 
-  const filteredVideos = activeCategory === 'all'
-    ? videos
+  const fetchVideos = async () => {
+    try {
+      const response = await videosAPI.getAll();
+      setVideos(response.data);
+    } catch (error) {
+      console.error('Error fetching videos:', error);
+      // Fallback to empty array if API fails
+      setVideos([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const filteredVideos = activeCategory === 'all' 
+    ? videos 
     : videos.filter(video => video.category === activeCategory);
 
   const handleVideoClick = (videoId: string, title: string) => {
@@ -82,14 +51,22 @@ const Projects = () => {
     setSelectedVideo(null);
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <div className="text-white text-xl">Loading videos...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Header */}
       <div className="bg-black/50 backdrop-blur-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
-            <Link
-              to="/"
+            <Link 
+              to="/" 
               className="flex items-center space-x-3 text-white hover:text-purple-400 transition-colors"
             >
               <ArrowLeft size={24} />
@@ -124,12 +101,12 @@ const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredVideos.map((video, index) => (
             <VideoCard
-              key={`${video.category}-${index}`}
+              key={video._id || `${video.category}-${index}`}
               title={video.title}
               duration={video.duration}
-              description={video.description}
-              videoId={video.id}
-              onClick={handleVideoClick}
+              videoId={video.videoId}
+              onClick={handleVideoClick} 
+              description={video.description}           
             />
           ))}
         </div>

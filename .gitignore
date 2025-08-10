@@ -23,3 +23,17 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Vite cache
+.vite/
+
+# Environment variables
+.env
+.env.*.local
+
+# Editor & OS files
+.DS_Store
+Thumbs.db

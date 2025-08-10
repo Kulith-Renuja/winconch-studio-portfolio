@@ -45,13 +45,13 @@ const Portfolio: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My{' '}
+            🎬 Our{' '}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Portfolio
+              Showreel
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A showcase of recent projects demonstrating creative vision and technical expertise
+            A curated selection of our most captivating video projects, blending storytelling, creativity, and precision editing to bring ideas to life
           </p>
         </div>
 

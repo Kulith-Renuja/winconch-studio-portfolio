@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom'; 
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
-            <h3 className="text-2xl font-bold text-white mb-4">VideoAlchemist</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">WinConch</h3>
             <p className="text-gray-400 max-w-md">
               Transforming ordinary footage into extraordinary visual experiences through professional video editing.
             </p>
@@ -37,12 +38,19 @@ const Footer = () => {
               <span className="text-sm font-medium">Back to Top</span>
               <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
             </button>
+
+            <Link to="/admin/login" >
+              <button
+              className="flex items-center space-x-2 bg-gray-900 group mt-4">
+              <span className="text-sm font-medium">Add</span>
+            </button>
+            </Link>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-500 text-sm">
-            © 2025 VideoAlchemist. All rights reserved. | Crafted with passion for visual storytelling.
+            © 2025 WinConch. All rights reserved. | Crafted with passion for visual storytelling.
           </p>
         </div>
       </div>

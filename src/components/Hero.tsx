@@ -1,7 +1,16 @@
 import React from 'react';
 import { Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
@@ -9,9 +18,9 @@ const Hero = () => {
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-16 h-16 bg-purple-500/20 rounded-lg rotate-12 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-12 h-12 bg-purple-600/30 rounded-lg -rotate-12 animate-bounce"></div>
-        <div className="absolute bottom-20 left-20 w-20 h-20 bg-purple-400/10 rounded-lg rotate-45 animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-16 h-16 bg-purple-500/20 rounded-lg rotate-12 animate-pulse flex items-center justify-center"><span className="text-gray-200 font-bold text-2xl">Ai</span></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-purple-600/30 rounded-lg -rotate-12 animate-bounce flex items-center justify-center"><span className="text-gray-200 font-bold text-2xl">3D</span></div>
+        <div className="absolute bottom-20 left-20 w-20 h-20 bg-purple-400/10 rounded-lg rotate-45 animate-pulse flex items-center justify-center"><span className="text-gray-200 font-bold text-2xl">Ps</span></div>
         
         {/* Lightning Effects */}
         <div className="absolute top-1/4 right-1/4 w-32 h-1 bg-gradient-to-r from-purple-500 to-transparent opacity-30 animate-pulse"></div>
@@ -22,21 +31,29 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <div className="text-purple-400 font-medium text-lg mb-4 tracking-wider">
-              JIMMY TURNER
+              🎬 Creative Video Production & Editing
             </div>
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              PROFESSIONAL
+              WinConch
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
-                VIDEO EDITOR
+                Studio
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-lg">
-              Making Your Videos Look More Cool.
+              Cinematic edits, brand videos, and social media content that captivate and inspire.
             </p>
-            <button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
+            <button 
+            onClick={scrollToContact}
+            className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
               LET'S TALK
             </button>
+            <Link
+            to="/projects" >
+             <button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 ml-4">
+              View Our Work
+            </button>
+            </Link>
           </div>
 
           <div className="relative flex justify-center lg:justify-end">
@@ -54,8 +71,7 @@ const Hero = () => {
                 <div className="w-32 h-32 bg-gray-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <Play size={40} className="text-gray-400" />
                 </div>
-                <div className="text-yellow-400 text-6xl font-bold mb-2">👑</div>
-                <div className="text-white text-lg font-semibold">Jimmy Turner</div>
+                <div className="text-white text-lg font-semibold">intro video</div>
               </div>
             </div>
           </div>

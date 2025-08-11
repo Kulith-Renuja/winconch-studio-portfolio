@@ -104,17 +104,7 @@ const AdminLogin = () => {
           </button>
         </form>
 
-        <div className="mt-6 text-center">
-          <p className="text-gray-400 text-sm">
-            Don't have an account?{' '}
-            <button
-              onClick={() => navigate('/admin/register')}
-              className="text-purple-400 hover:text-purple-300 font-medium"
-            >
-              Register here
-            </button>
-          </p>
-        </div>
+        
       </div>
     </div>
   );
